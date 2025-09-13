@@ -18,15 +18,15 @@ jobs:
       with:
         node-version: '22'
         cache: 'npm'
-        
-        - name: Install dependencies
+
+    - name: Install dependencies
       run: npm install
 
     - name: Build application
       run: npm run build
       env:
         NODE_OPTIONS: --max-old-space-size=4096
-        
+
     - name: Deploy to Vercel (Production)
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       uses: amondnet/vercel-action@v25
@@ -35,7 +35,7 @@ jobs:
         vercel-args: '--prod'
         vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-        
+
     - name: Deploy to Vercel (Preview)
       if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/master'
       uses: amondnet/vercel-action@v25
