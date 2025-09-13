@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { AppBar } from './components/layout/AppBar';
 import { UserOnboarding } from './components/features/UserOnboarding';
 import { ReceiptUploader } from './components/features/ReceiptUploader';
@@ -9,7 +9,7 @@ import { SubscriptionModal } from './components/features/SubscriptionModal';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './components/ui/Tabs';
 import { Button } from './components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from './components/ui/Card';
-import { Upload, ChefHat, Package, Crown } from 'lucide-react';
+import { ChefHat, Package, Crown } from 'lucide-react';
 import { User, ParsedItem, Recipe, PantryItem } from './types';
 
 function App() {

@@ -1,7 +1,7 @@
 import { ParsedItem, Recipe } from '../types';
 
 // Mock OCR service
-export async function processReceiptOCR(file: File): Promise<string> {
+export async function processReceiptOCR(_file: File): Promise<string> {
   // Simulate OCR processing delay
   await new Promise(resolve => setTimeout(resolve, 2000));
   
@@ -96,8 +96,8 @@ function categorizeIngredient(item: string): string {
 
 // Mock recipe generation
 export async function generateRecipes(
-  ingredients: ParsedItem[],
-  dietaryPreferences: string[],
+  _ingredients: ParsedItem[],
+  _dietaryPreferences: string[],
   skillLevel: string
 ): Promise<Recipe[]> {
   await new Promise(resolve => setTimeout(resolve, 2000));
