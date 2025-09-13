@@ -18,7 +18,7 @@ export function usePaymentContext(): {
             "Content-Type": "application/json",
         },
     });
-    const apiClient = withPaymentInterceptor(baseClient, walletClient);
+    const apiClient = withPaymentInterceptor(baseClient, walletClient as any);
     const response = await apiClient.post("/api/payment", { amount: "$9.99" });
     const paymentResponse = response.config.headers["X-PAYMENT"];
     if (!paymentResponse) throw new Error("payment response is absent");

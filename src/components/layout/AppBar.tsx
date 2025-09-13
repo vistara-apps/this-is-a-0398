@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { ChefHat, Settings, User } from 'lucide-react';
 import { Button } from '../ui/Button';

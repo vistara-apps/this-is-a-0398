@@ -4,11 +4,68 @@
 
 @layer base {
   * {
-    border-color: hsl(220 20% 85%);
+    border-color: hsl(var(--border));
   }
-  
+
   body {
-    background-color: hsl(220 20% 98%);
-    color: hsl(220 20% 15%);
+    background-color: hsl(var(--background));
+    color: hsl(var(--text-primary));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--text-muted));
+  }
+}
+
+@layer components {
+  /* Gradient backgrounds for food theme */
+  .gradient-food {
+    background: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(45 86% 83%) 100%);
+  }
+
+  .gradient-success {
+    background: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 55%) 100%);
+  }
+
+  /* Enhanced card shadows */
+  .card-shadow {
+    box-shadow: 0 4px 16px hsla(24, 20%, 15%, 0.08), 0 1px 4px hsla(24, 20%, 15%, 0.06);
+  }
+
+  .card-shadow-hover {
+    box-shadow: 0 8px 32px hsla(24, 20%, 15%, 0.12), 0 2px 8px hsla(24, 20%, 15%, 0.08);
+  }
+
+  /* Button enhancements */
+  .btn-food {
+    background: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 45%) 100%);
+    box-shadow: 0 2px 8px hsla(24, 95%, 53%, 0.3);
+  }
+
+  .btn-food:hover {
+    background: linear-gradient(135deg, hsl(24 95% 45%) 0%, hsl(24 95% 35%) 100%);
+    box-shadow: 0 4px 16px hsla(24, 95%, 53%, 0.4);
+  }
+
+  /* Input focus styles */
+  .input-focus {
+    border-color: hsl(24 95% 53%);
+    box-shadow: 0 0 0 3px hsla(24, 95%, 53%, 0.1);
   }
 }
